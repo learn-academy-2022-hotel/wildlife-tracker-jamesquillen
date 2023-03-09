@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe AnimalSighting, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'must include a latitude, longitude, and date' do
+    sighting = AnimalSighting.create
+    expect(sighting.errors[:latitude] && sighting.errors[:longitude] && sighting.errors[:date]).to_not be_empty
+  end 
 end
